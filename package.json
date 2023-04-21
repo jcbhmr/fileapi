@@ -1,19 +1,24 @@
 {
-  "name": "filereader",
-  "description": "HTML5 FileAPI `FileReader` for Node.js",
-  "url": "http://github.com/node-file-api/FileReader",
-  "keywords": [
-    "html5",
-    "jsdom",
-    "file-api",
-    "FileReader",
-    "file-reader",
-    "file",
-    "reader"
+  "name": "@jcbhmr/fileapi",
+  "description": "📂 Node.js polyfill for the rest of the File API",
+  "keywords": ["nodejs", "polyfill", "fileapi", "filereader"],
+  "version": "1.0.0",
+  "contributors": [
+    "AJ ONeal <coolaj86@gmail.com>",
+    "Jacob Hummer <jcbhmr@outlook.com> (https://jcbhmr.me/)"
   ],
-  "author": "AJ ONeal <coolaj86@gmail.com>",
-  "contributors": [],
-  "dependencies": {},
-  "main": "FileReader.js",
-  "version": "0.10.3"
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./*.js": "./dist/*.js",
+    "./internal/*": null
+  },
+  "scripts": {
+    "pretest": "prettier -w --ignore-path .gitignore .",
+    "test": "vitest run",
+    "start": "vitest",
+    "prepack": "vite build"
+  }
 }
