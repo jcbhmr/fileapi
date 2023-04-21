@@ -1,8 +1,13 @@
 {
   "name": "@jcbhmr/fileapi",
-  "description": "📂 Node.js polyfill for the rest of the File API",
-  "keywords": ["nodejs", "polyfill", "fileapi", "filereader"],
   "version": "1.0.0",
+  "description": "📂 Node.js polyfill for the rest of the File API",
+  "keywords": [
+    "nodejs",
+    "polyfill",
+    "fileapi",
+    "filereader"
+  ],
   "contributors": [
     "AJ ONeal <coolaj86@gmail.com>",
     "Jacob Hummer <jcbhmr@outlook.com> (https://jcbhmr.me/)"
@@ -16,9 +21,19 @@
     "./internal/*": null
   },
   "scripts": {
-    "pretest": "prettier -w --ignore-path .gitignore .",
-    "test": "vitest run",
+    "prepack": "vite build",
     "start": "vitest",
-    "prepack": "vite build"
+    "pretest": "prettier -w --ignore-path .gitignore .",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.7",
+    "prettier-plugin-jsdoc": "^0.4.2",
+    "prettier-plugin-packagejson": "^2.4.3",
+    "typescript": "^5.0.4",
+    "vite": "^4.3.1",
+    "vite-plugin-dts": "^2.3.0",
+    "vite-plugin-no-bundle": "^2.0.2",
+    "vitest": "^0.30.1"
   }
 }
