@@ -12,6 +12,7 @@
     "AJ ONeal <coolaj86@gmail.com>",
     "Jacob Hummer <jcbhmr@outlook.com> (https://jcbhmr.me/)"
   ],
+  "type": "module",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -25,6 +26,10 @@
     "start": "vitest",
     "pretest": "prettier -w --ignore-path .gitignore .",
     "test": "vitest run"
+  },
+  "dependencies": {
+    "p-event": "^5.0.1",
+    "web-worker": "^1.2.0"
   },
   "devDependencies": {
     "@types/node": "^18.15.13",

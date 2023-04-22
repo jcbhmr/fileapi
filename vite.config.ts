@@ -7,7 +7,11 @@ export default defineConfig({
     target: "esnext",
     ssr: true,
     lib: {
-      entry: "src/index.ts",
+      entry: [
+        "src/index.ts",
+        "src/internal/Worker-node-worker.js",
+        "src/internal/yellowlet-worker.js",
+      ],
       formats: ["es"],
       fileName: "index",
     },
