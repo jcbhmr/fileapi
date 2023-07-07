@@ -1,16 +1,11 @@
 {
   "compilerOptions": {
     "noEmit": true,
-    "module": "ESNext",
     "target": "ESNext",
-    "moduleResolution": "bundler",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
-    "skipLibCheck": true,
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "allowArbitraryExtensions": true,
-    "allowImportingTsExtensions": true
+    "skipLibCheck": true
   },
-  "include": ["src", "test", "vite.config.ts", "index.d.ts"],
-  "exclude": ["node_modules"]
+  "include": ["src"]
 }

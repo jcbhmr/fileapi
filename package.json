@@ -1,6 +1,6 @@
 {
   "name": "@jcbhmr/fileapi",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "📂 Node.js polyfill for the rest of the File API",
   "keywords": [
     "nodejs",
@@ -9,37 +9,23 @@
     "filereader"
   ],
   "contributors": [
-    "AJ ONeal <coolaj86@gmail.com>",
     "Jacob Hummer <jcbhmr@outlook.com> (https://jcbhmr.me/)"
   ],
   "type": "module",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
-    },
-    "./*.js": "./dist/*.js",
-    "./internal/*": null
-  },
+  "exports": {},
   "scripts": {
-    "prepack": "vite build",
-    "start": "vitest",
-    "pretest": "prettier -w --ignore-path .gitignore .",
-    "test": "vitest run"
-  },
-  "dependencies": {
-    "p-event": "^5.0.1",
-    "web-worker": "^1.2.0"
+    "build": "tsc",
+    "lint": "prettier -w --ignore-path .gitignore . && tsc --noEmit",
+    "test": "vitest"
   },
   "devDependencies": {
     "@types/node": "^18.15.13",
-    "prettier": "^2.8.7",
-    "prettier-plugin-jsdoc": "^0.4.2",
-    "prettier-plugin-packagejson": "^2.4.3",
+    "prettier": "^3.0.0",
     "typescript": "^5.0.4",
-    "vite": "^4.3.1",
-    "vite-plugin-dts": "^2.3.0",
-    "vite-plugin-no-bundle": "^2.0.2",
-    "vitest": "^0.30.1"
+    "vitest": "^0.33.0"
+  },
+  "dependencies": {
+    "base64-js": "^1.5.1",
+    "tinylet": "^0.1.0"
   }
 }
