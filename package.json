@@ -1,31 +1,75 @@
 {
-  "name": "@jcbhmr/fileapi",
+  "name": "@webfill/fileapi",
   "version": "0.1.0",
   "description": "📂 Node.js polyfill for the rest of the File API",
   "keywords": [
-    "nodejs",
-    "polyfill",
     "fileapi",
-    "filereader"
+    "filereader",
+    "nodejs",
+    "polyfill"
   ],
   "contributors": [
     "Jacob Hummer <jcbhmr@outlook.com> (https://jcbhmr.me/)"
   ],
   "type": "module",
-  "exports": {},
+  "imports": {
+    "#File-polyfill.js": {
+      "deno": "./dist/File-polyfill-deno+bun+default.js",
+      "bun": "./dist/File-polyfill-deno+bun+default.js",
+      "node": "./dist/File-polyfill-node.js",
+      "default": "./dist/File-polyfill-deno+bun+default.js"
+    },
+    "#FileList-polyfill.js": {
+      "node": "./dist/FileList-polyfill-node.js",
+      "default": "./dist/FileList-polyfill-default.js"
+    },
+    "#FileReader-polyfill.js": {
+      "deno": "./dist/FileReader-polyfill-deno+default.js",
+      "node": "./dist/FileReader-polyfill-node.js",
+      "default": "./dist/FileReader-polyfill-deno+default.js"
+    },
+    "#FileReaderSync-polyfill.js": {
+      "node": "./dist/FileReaderSync-polyfill-node.js",
+      "default": "./dist/FileReaderSync-polyfill-default.js"
+    }
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    "./File.js": {
+      "deno": "./dist/File-deno+bun+default.js",
+      "bun": "./dist/File-deno+bun+default.js",
+      "node": "./dist/File-node.js",
+      "default": "./dist/File-deno+bun+default.js"
+    },
+    "./FileList.js": {
+      "node": "./dist/FileList-node.js",
+      "default": "./dist/FileList-default.js"
+    },
+    "./FileReader.js": {
+      "deno": "./dist/FileReader-deno+default.js",
+      "node": "./dist/FileReader-node.js",
+      "default": "./dist/FileReader-deno+default.js"
+    },
+    "./FileReaderSync.js": {
+      "node": "./dist/FileReaderSync-node.js",
+      "default": "./dist/FileReaderSync-default.js"
+    },
+    "./lib/*": null,
+    "./*.js": "./dist/*.js"
+  },
   "scripts": {
     "build": "tsc",
     "lint": "prettier -w --ignore-path .gitignore . && tsc --noEmit",
     "test": "vitest"
   },
+  "dependencies": {
+    "tinylet": "^0.1.0"
+  },
   "devDependencies": {
     "@types/node": "^18.15.13",
     "prettier": "^3.0.0",
+    "tsx": "^3.12.7",
     "typescript": "^5.0.4",
     "vitest": "^0.33.0"
-  },
-  "dependencies": {
-    "base64-js": "^1.5.1",
-    "tinylet": "^0.1.0"
   }
 }

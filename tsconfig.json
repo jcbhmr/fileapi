@@ -1,11 +1,14 @@
 {
   "compilerOptions": {
-    "noEmit": true,
+    "outDir": "dist",
+    "declaration": true,
     "target": "ESNext",
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "strict": true,
+    "rootDir": "src"
   },
   "include": ["src"]
 }

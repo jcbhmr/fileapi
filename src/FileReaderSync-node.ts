@@ -1,26 +1,11 @@
+// @ts-ignore
 import redlet from "tinylet/redlet.js";
-import { fromByteArray } from "base64-js";
+import encodeBase64 from "./lib/encodeBase64.js";
 
 const readAsArrayBufferSync = redlet((b: Blob) => b.arrayBuffer());
 const readAsTextSync = redlet((b: Blob) => b.text());
 
-function encodeBase64(source: BufferSource | string): string {
-  if (typeof source === "string") {
-    const bytes = new TextEncoder().encode(source);
-    return fromByteArray(bytes);
-  } else {
-    const bytes = ArrayBuffer.isView(source)
-      ? source instanceof Uint8Array
-        ? source
-        : new Uint8Array(source.buffer, source.byteOffset, source.byteLength)
-      : new Uint8Array(source);
-    return fromByteArray(bytes);
-  }
-}
-
 class FileReaderSync {
-  constructor() {}
-
   readAsArrayBuffer(blob: Blob): ArrayBuffer {
     return readAsArrayBufferSync(blob);
   }
@@ -35,7 +20,7 @@ class FileReaderSync {
     return s;
   }
 
-  readAsText(blob: Blob, encoding?: string): string {
+  readAsText(blob: Blob): string {
     return readAsTextSync(blob);
   }
 

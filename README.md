@@ -1,8 +1,8 @@
 ![🚧 Under construction 👷‍♂️](https://i.imgur.com/LEP2R3N.png)
 
-# File API for Node.js
+# File API polyfill
 
-📂 Node.js polyfill for the rest of the File API
+📂 Isomorphic `File`, `FileReader`, and `FileReaderSync` for Node.js, Deno, Bun, and browsers
 
 <div align="center">
 
@@ -15,13 +15,13 @@
 You can install this package using npm, [Yarn], or [pnpm]. Whatever floats your boat! ⛵
 
 ```sh
-npm install @jcbhmr/fileapi
+npm install @webfill/fileapi
 ```
 
 ## Usage
 
 ```js
-import "@jcbhmr/fileapi";
+import "@webfill/fileapi";
 
 const blob = new Blob(["Hello world!"]);
 const text = new FileReaderSync().readAsText(blob);

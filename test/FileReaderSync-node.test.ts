@@ -1,5 +1,5 @@
 import { test, assert } from "vitest";
-import FileReaderSync from "../src/FileReaderSync.js";
+import FileReaderSync from "../src/FileReaderSync-node.js";
 
 test("new FileReaderSync()", () => {
   new FileReaderSync();
@@ -24,6 +24,7 @@ test("readAsBinaryString()", () => {
     expected += String.fromCharCode(...bytes.slice(i, i + 50));
   }
 
+  assert.notEqual(actual, input);
   assert.equal(actual, expected);
 });
 
